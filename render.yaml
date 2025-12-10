@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: moonbot-autotrade
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python moonbot_autotrade_v3.py"
+    autoDeploy: true
+    plan: starter
+    envVars:
+      - key: OKX_API_KEY
+        sync: false
+      - key: OKX_SECRET_KEY
+        sync: false
+      - key: OKX_PASSPHRASE
+        sync: false
